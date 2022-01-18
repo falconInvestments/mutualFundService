@@ -4,7 +4,7 @@ const res = require('express/lib/response');
 const express = require('express');
 const app = express();
 
-const port = 4600;
+const port = process.env.PORT || 4600;
 
 //middlewares
 app.use(express.json());
