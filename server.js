@@ -1,7 +1,5 @@
-const req = require('express/lib/request');
-const res = require('express/lib/response');
-
 const express = require('express');
+
 const app = express();
 
 const port = process.env.PORT || 4600;
@@ -10,12 +8,12 @@ const port = process.env.PORT || 4600;
 app.use(express.json());
 
 //routers
-const routers = require('./routes/mutualFundsRouter');
-app.use('/mutual-funds', routers);
-const routers = require('./routes/accountsRouter.js');
-app.use('/accounts', routers);
-const routers = require('./routes/mFStocksRouter');
-app.use('/mutual-funds-stocks', routers);
+const mFRouters = require('./routes/mutualFundsRouter');
+app.use('/mutual-funds', mFRouters);
+const accountRouters = require('./routes/accountsRouter');
+app.use('/accounts', accountRouters);
+const stockRouters = require('./routes/mFStocksRouter');
+app.use('/mutual-funds-stocks', stockRouters);
 
 app.get('/', (req, res) => {
     res.send('Hello')

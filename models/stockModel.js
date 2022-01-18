@@ -1,5 +1,3 @@
-const { sequelize, DataTypes } = require("sequelize/dist");
-
 module.exports = (sequelize, DataTypes) => {
 
     const Stock = sequelize.define('stock', {

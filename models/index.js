@@ -54,12 +54,24 @@ db.sequelize = sequelize;
 
 db.MutualFunds = require('./mutualFundModel')(sequelize, DataTypes);
 db.Accounts = require('./accountModel')(sequelize, DataTypes);
+db.MFStocks = require('./mFStockModel')(sequelize, DataTypes);
+db.Stocks = require('./stockModel')(sequelize, DataTypes);
+db.Users = require('./userModel')(sequelize, DataTypes);
 
 db.sequelize.sync({ force: true }).then(() => {
     console.log('DB synced with sequelize')
 }).catch((error) => {
     console.log('Error syncing the DB to sequelize' + error)
 });
+
+db.Users.hasMany(db.Accounts);
+db.Accounts.belongsTo(db.MutualFunds);
+db.Accounts.belongsTo(db.Users);
+db.MutualFunds.hasMany(db.Accounts);
+db.MutualFunds.hasMany(db.MFStocks);
+db.MFStocks.belongsTo(db.MutualFunds);
+db.MFStocks.belongsTo(db.Stocks);
+db.Stocks.hasMany(db.MFStocks);
 
 module.exports = db;
 

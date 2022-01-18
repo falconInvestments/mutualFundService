@@ -1,7 +1,3 @@
-//this file stores the "mutualFund" model (model is table schema in sequelize lingo)
-
-const { sequelize, DataTypes } = require("sequelize/dist");
-
 //inputs: sequelize instance and DT Class, returns: a mutualFund Model object
 module.exports = (sequelize, DataTypes) => {
 
