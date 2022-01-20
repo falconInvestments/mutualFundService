@@ -16,7 +16,7 @@ const stockRouters = require('./routes/mFStocksRouter');
 app.use('/mutual-funds-stocks', stockRouters);
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.send('Mutual Fund Service is up and running!')
 });
 
 app.listen(port, () => {
