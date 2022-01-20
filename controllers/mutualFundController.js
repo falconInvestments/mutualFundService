@@ -3,7 +3,7 @@ const db = require('../models/index');
 const MutualFund = db.MutualFunds;
 
 //C
-const addMutualFund = async (req, res) => {
+const addMutualFund = async (req, res, next) => {
     try {
         let input_data = {
             mFId: req.body.mFId,
@@ -25,9 +25,8 @@ const addMutualFund = async (req, res) => {
         const mutualFund = await MutualFund.create(input_data);
 
         res.status(201).send(mutualFund);
-    } catch(error) {
-        res.status(error.res.status)
-        return res.send(error.message);
+    } catch(err) {
+        next(err);
     }
 }
 
