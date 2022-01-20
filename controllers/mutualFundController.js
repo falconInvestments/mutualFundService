@@ -6,7 +6,6 @@ const MutualFund = db.MutualFunds;
 const addMutualFund = async (req, res, next) => {
     try {
         let input_data = {
-            mFId: req.body.mFId,
             fundName: req.body.fundName,
             symbol: req.body.symbol,
             yTD: req.body.yTD,
