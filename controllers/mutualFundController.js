@@ -21,6 +21,7 @@ const addMutualFund = async (req, res, next) => {
             minimum: req.body.minimum
             // topHoldings: req.body.topHoldings
         }
+        console.log("My input data is", input_data);
         const mutualFund = await MutualFund.create(input_data);
 
         res.status(201).send(mutualFund);
