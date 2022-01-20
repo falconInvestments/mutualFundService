@@ -20,11 +20,11 @@ let sequelize = null;
     } else {
        sequelize = new Sequelize(
         { // use imported configurations from dbConfig
-            database: dbConfig.DB,
-            username: dbConfig.USER,
-            password: dbConfig.PASSWORD,
-            dialect: dbConfig.dialect,
-            host: dbConfig.HOST,
+            database: process.env.DB,
+            username: process.env.USER,
+            password: process.env.PASSWORD,
+            dialect: process.env.dialect,
+            host: process.env.HOST,
         })
     }
 //config for AWS
