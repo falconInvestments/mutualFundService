@@ -60,11 +60,11 @@ module.exports = (sequelize, DataTypes) => {
         minimum: {
             type: DataTypes.INTEGER,
             allowNull: false
-        },
-        topHoldings: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: false
         }
+        // topHoldings: {
+        //     type: DataTypes.ARRAY(DataTypes.STRING),
+        //     allowNull: false
+        // }
     })
     return MutualFund;
 }

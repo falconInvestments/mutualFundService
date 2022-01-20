@@ -23,7 +23,7 @@ const addMutualFund = async (req, res) => {
     }
     const mutualFund = await MutualFund.create(input_data);
 
-    res.status(200).send(mutualFund);
+    res.status(201).send(mutualFund);
 }
 
 //R ALL
