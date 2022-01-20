@@ -26,7 +26,7 @@ const addMutualFund = async (req, res) => {
 
         res.status(201).send(mutualFund);
     } catch(error) {
-        res.status(error.response.status)
+        res.status(error.res.status)
         return res.send(error.message);
     }
 }
@@ -37,7 +37,7 @@ const getAllMutualFunds = async (req, res) => {
         let mutualFunds = await MutualFund.findAll({});
         res.status(200).send(mutualFunds);
     } catch(error) {
-        res.status(error.response.status)
+        res.status(error.res.status)
         return res.send(error.message);
     }
 }
@@ -50,7 +50,7 @@ const getOneMutualFund = async (req, res) => {
     let mutualFunds = await MutualFund.findOne({where: {mFId: mFId}});
     res.status(200).send(mutualFunds);
     } catch(error) {
-        res.status(error.response.status)
+        res.status(error.res.status)
         return res.send(error.message);
     }
 };
@@ -66,7 +66,7 @@ const updateMutualFund = async (req, res) => {
     const mutualFund = await MutualFund.update(req.body, {where: {mFId: mFId}});
     res.status(200).send(mutualFund);
     } catch(error) {
-        res.status(error.response.status)
+        res.status(error.res.status)
         return res.send(error.message);
     }
 };
@@ -79,7 +79,7 @@ const deleteMutualFund = async (req, res) => {
     await MutualFund.destroy({where: {mFId: mFId}});
     res.status(200).send(`The Mutual Fund with the id of: ${mFId} has been deleted.`);
     } catch(error) {
-        res.status(error.response.status)
+        res.status(error.res.status)
         return res.send(error.message);
     }
 };
