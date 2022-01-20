@@ -25,8 +25,9 @@ const addMutualFund = async (req, res) => {
         const mutualFund = await MutualFund.create(input_data);
 
         res.status(201).send(mutualFund);
-    } catch (err) {
-        next(err);
+    } catch(error) {
+        res.status(error.response.status)
+        return res.send(error.message);
     }
 }
 
@@ -35,9 +36,10 @@ const getAllMutualFunds = async (req, res) => {
     try {
         let mutualFunds = await MutualFund.findAll({});
         res.status(200).send(mutualFunds);
-    } catch (err) {
-        next(err);
-    } 
+    } catch(error) {
+        res.status(error.response.status)
+        return res.send(error.message);
+    }
 }
 
 //R
@@ -47,9 +49,10 @@ const getOneMutualFund = async (req, res) => {
     
     let mutualFunds = await MutualFund.findOne({where: {mFId: mFId}});
     res.status(200).send(mutualFunds);
-    } catch (err) {
-        next(err);
-    } 
+    } catch(error) {
+        res.status(error.response.status)
+        return res.send(error.message);
+    }
 };
 
 //??? why is update have a const and why does read one return mutualFunds?
@@ -62,9 +65,10 @@ const updateMutualFund = async (req, res) => {
 
     const mutualFund = await MutualFund.update(req.body, {where: {mFId: mFId}});
     res.status(200).send(mutualFund);
-    } catch (err) {
-        next(err);
-    } 
+    } catch(error) {
+        res.status(error.response.status)
+        return res.send(error.message);
+    }
 };
 
 //D
@@ -74,9 +78,10 @@ const deleteMutualFund = async (req, res) => {
 
     await MutualFund.destroy({where: {mFId: mFId}});
     res.status(200).send(`The Mutual Fund with the id of: ${mFId} has been deleted.`);
-    } catch (err) {
-        next(err);
-    } 
+    } catch(error) {
+        res.status(error.response.status)
+        return res.send(error.message);
+    }
 };
 
 module.exports = {
