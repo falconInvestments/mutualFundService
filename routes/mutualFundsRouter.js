@@ -7,7 +7,7 @@ router.post('/', mutualFundController.addMutualFund);
 
 router.get('/', mutualFundController.getAllMutualFunds);
 
-router.get('/:id', mutualFundController.updateMutualFund);
+router.get('/:id', mutualFundController.getOneMutualFund);
 
 router.put('/:id', mutualFundController.updateMutualFund);
 
