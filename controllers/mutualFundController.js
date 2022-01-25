@@ -48,7 +48,7 @@ const getOneMutualFund = async (req, res) => {
     let mutualFunds = await MutualFund.findOne({where: {id: mf_id}});
     res.status(200).send(mutualFunds);
     } catch(err) {
-        next(err);
+        console.log(err);
     }
 };
 
