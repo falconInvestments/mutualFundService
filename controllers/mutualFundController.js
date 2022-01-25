@@ -73,7 +73,7 @@ const deleteMutualFund = async (req, res) => {
     let id = req.params.mf_id;
 
     await MutualFund.destroy({where: {mf_id: id}});
-    res.status(200).send(`The Mutual Fund with the id of: ${mf_id} has been deleted.`);
+    res.status(200).send(`The Mutual Fund with the id of: ${id} has been deleted.`);
     } catch(err) {
         console.log(err);
     }
