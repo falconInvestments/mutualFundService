@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 
     //modelName is 'mutualFund'(first argument of the define() function and adds a "s" for the table name once synced)
     const MutualFund = sequelize.define('mutualFund', {
-        mFId: {
+        mf_id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
