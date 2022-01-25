@@ -7,10 +7,10 @@ router.post('/', mutualFundController.addMutualFund);
 
 router.get('/', mutualFundController.getAllMutualFunds);
 
-router.get('/:id', mutualFundController.getOneMutualFund);
+router.get('/:mf_id', mutualFundController.getOneMutualFund);
 
-router.put('/:id', mutualFundController.updateMutualFund);
+router.put('/:mf_id', mutualFundController.updateMutualFund);
 
-router.delete('/:id', mutualFundController.deleteMutualFund);
+router.delete('/:mf_id', mutualFundController.deleteMutualFund);
 
 module.exports = router;
