@@ -58,7 +58,7 @@ db.MFStocks = require('./mFStockModel')(sequelize, DataTypes);
 db.Stocks = require('./stockModel')(sequelize, DataTypes);
 db.Users = require('./userModel')(sequelize, DataTypes);
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
     console.log('DB synced with sequelize')
 }).catch((error) => {
     console.log('Error syncing the DB to sequelize' + error)

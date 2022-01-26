@@ -61,7 +61,8 @@ const updateMutualFund = async (req, res) => {
     let id = req.params.mf_id;
 
     const mutualFund = await MutualFund.update(req.body, {where: {mf_id: id}});
-    res.status(200).send(mutualFund);
+    // res.status(200).send(mutualFund);
+    res.status(200).send(`The Mutual Fund with the mf_id of: ${id} has been updated.`);
     } catch(err) {
         console.log(err);
     }
@@ -73,7 +74,7 @@ const deleteMutualFund = async (req, res) => {
     let id = req.params.mf_id;
 
     await MutualFund.destroy({where: {mf_id: id}});
-    res.status(200).send(`The Mutual Fund with the id of: ${id} has been deleted.`);
+    res.status(200).send(`The Mutual Fund with the mf_id of: ${id} has been deleted.`);
     } catch(err) {
         console.log(err);
     }
