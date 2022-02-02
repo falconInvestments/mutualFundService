@@ -6,10 +6,10 @@ router.post('/', mFStockController.addMFStock);
 
 router.get('/', mFStockController.getAllMFStocks);
 
-router.get('/:stockId&mFId', mFStockController.getOneMFStock);
+router.get('/:stockId&mf_id', mFStockController.getOneMFStock);
 
-router.put('/:stockId&mFId', mFStockController.updateMFStock);
+router.put('/:stockId&mf_id', mFStockController.updateMFStock);
 
-router.delete('/:stockId&mFId', mFStockController.deleteMFStock);
+router.delete('/:stockId&mf_id', mFStockController.deleteMFStock);
 
 module.exports = router;

@@ -36,6 +36,7 @@ const getAllMutualFunds = async (req, res) => {
         let mutualFunds = await MutualFund.findAll({});
         res.status(200).send(mutualFunds);
     } catch(err) {
+        res.status(404).send("Mutual Funds NOT found");
         console.log(err);
     }
 }
@@ -48,6 +49,7 @@ const getOneMutualFund = async (req, res) => {
     let mutualFunds = await MutualFund.findOne({where: {mf_id: id}});
     res.status(200).send(mutualFunds);
     } catch(err) {
+        res.status(404).send(`Mutual Fund with the id of ${mf_id} NOT found`);
         console.log(err);
     }
 };
